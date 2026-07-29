@@ -43,7 +43,8 @@ The following handheld street-footage demo shows the trained detector applied ou
 > inference latency. The recording also includes video decoding, preprocessing,
 > annotation rendering, postprocessing and video encoding overhead.
 
----
+
+
 
 ## Task formulation
 
@@ -54,7 +55,8 @@ This is an object-detection problem, not image classification. A classifier pred
 
 A predicted box is evaluated against its ground-truth box using **Intersection over Union (IoU)**. For small objects, even a modest coordinate error can produce a large reduction in IoU. This explains why the prevalence of tiny litter instances is especially important in this project.
 
----
+
+
 
 ## Project difficulties
 
@@ -106,7 +108,8 @@ The exploratory analysis confirmed two central characteristics of the dataset: a
   \>
 </p>
 
----
+
+
 
 ## Dataset pipeline
 
@@ -151,7 +154,8 @@ The split is generated at the image level, so all annotations belonging to one i
 
 The same image split and box geometry are reused across these three representations. Only the class mapping changes, making the initial dataset comparison meaningful.
 
----
+
+
 
 ## Model architecture and transfer learning
 
@@ -159,7 +163,7 @@ The same image split and box geometry are reused across these three representati
   <img 
 	  src="assets/figures/yolo_architecture.png"
 	  alt="Conceptual YOLO backbone, neck and detection head"
-	  width="400"
+	  width="250"
   \>
 </p>
 
@@ -195,7 +199,7 @@ Freezing prevents the selected early modules from updating during backpropagatio
 
 Freezing affects training behavior, not the mathematical cost of the final forward pass. The results therefore do not imply that frozen models are intrinsically faster at inference.
 
----  
+  
 
 ## Training pipeline
 
@@ -222,7 +226,7 @@ The report and presentation document the following shared settings for the later
 
 The archived repository does not contain the complete `runs/` directories or final model weights for this sweep. Consequently, the final table below is supported by the project report and presentation, while the 25-epoch dataset experiment is additionally supported by executable notebook code and captured Ultralytics output.
   
----
+
 
 ## Evaluation metrics
 
@@ -284,7 +288,8 @@ FPS = 1000 / total_time_ms
 
 This is more informative than reporting neural-network inference alone because it better approximates the complete per-image pipeline. It is still a benchmark from a particular software and hardware environment, not a universal deployment guarantee.
   
----
+
+
 
 ## Results
 
@@ -358,7 +363,8 @@ Under the matched binary, 640px setup, frozen YOLO26m achieved 0.494 mAP50 compa
 
 The 960px YOLO26m configuration is the best accuracy-oriented model, while lower-resolution and smaller models provide lower latency. This is the central deployment trade-off: small-object accuracy benefits from resolution and capacity, but both increase computational cost.
 
----
+
+
 
 ## Selected model
 
@@ -389,7 +395,8 @@ The 960px YOLO26m configuration is the best accuracy-oriented model, while lower
 
 This is a stronger candidate when throughput matters more than maximum detection accuracy.
 
----
+
+
 
 ## What the experiments demonstrate
 
@@ -409,7 +416,8 @@ Higher resolution preserves more evidence for tiny objects but increases GPU mem
 
 A detector with high precision may still miss many objects, while a detector with high recall may create more false alarms. Waste monitoring, robotic picking and sorting systems may assign different costs to those errors, so a single metric should not be used in isolation.
   
----
+
+
 
 ## Limitations
 
@@ -423,7 +431,8 @@ A detector with high precision may still miss many objects, while a detector wit
 
 - **No systematic hyperparameter search:** optimizer, learning rate, augmentation, freezing depth, and batch size were not explored through a controlled search procedure.
 
----
+
+
 
 ## Notebook roles
 
@@ -434,7 +443,8 @@ A detector with high precision may still miss many objects, while a detector wit
 - [`notebooks/legacy/waste_disposal.ipynb`](notebooks/legacy/waste_disposal.ipynb): an earlier experimental notebook retained as project history.
 
 
----
+
+
 
 ## Reproducing the verified dataset experiment
 
@@ -464,7 +474,8 @@ pip install ultralytics pycocotools pandas numpy matplotlib pillow scikit-learn 
 
 The complete 100-epoch sweep cannot currently be reproduced from the public snapshot alone because the final run configurations, result CSV files and weights are not all present. The report and presentation preserve the experiment matrix and outputs, but exact reproducibility requires restoring or regenerating those artifacts.
 
----
+
+
 
 ## Project documentation
 
@@ -482,7 +493,8 @@ Developed for **DT068A Image Analysis** course at Mid Sweden University.
 > This was a collaborative academic project by **Javier Jerez Reinoso** and **Marco Zennaro** for the DT068A Image Analysis course at Mid Sweden University. Ultralytics supplied the detection framework and pretrained model implementations; the project work focused on TACO analysis, annotation conversion, experimental design, training, evaluation, and interpretation.
 
 
----
+
+
 
 ## References and attribution
 
