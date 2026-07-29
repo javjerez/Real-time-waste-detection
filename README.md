@@ -8,9 +8,11 @@
 
 
 <p align="center">
-
-  <img src="assets/figures/best_model_summary.png" alt="Best model summary: YOLO26m with frozen layers at 960 px" width="400">
-
+  <img 
+	  src="assets/figures/best_model_summary.png"
+	  alt="Best model summary: YOLO26m with frozen layers at 960 px"
+	  width="400"
+  \>
 </p>
 
 ## Overview
@@ -59,9 +61,11 @@ A predicted box is evaluated against its ground-truth box using **Intersection o
 TACO contains approximately 1,500 images, 4,784 annotated objects and 60 fine-grained waste categories. The images were captured in natural environments rather than controlled studio conditions.
 
 <p align="center">
-
-  <img src="assets/figures/dataset_example.png" alt="Annotated TACO examples showing litter in outdoor scenes" width="350">
-
+  <img 
+	  src="assets/figures/dataset_example.png" 
+	  alt="Annotated TACO examples showing litter in outdoor scenes" 
+	  width="350"
+  \>
 </p>
 
 The dataset presents several difficulties that directly affect detector training:
@@ -79,21 +83,27 @@ The dataset presents several difficulties that directly affect detector training
 The exploratory analysis confirmed two central characteristics of the dataset: a strongly imbalanced label distribution and substantial variation in image dimensions. These properties motivated the comparison between fine-grained, supercategory and binary label representations.
 
 <p align="center">
-  <img src="assets/figures/class_distribution.png"
-       alt="Distribution of the original TACO categories"
-       width="350">
+  <img 
+	  src="assets/figures/class_distribution.png"
+      alt="Distribution of the original TACO categories"
+      width="550"
+  \>
 </p>
 
 <p align="center">
-  <img src="assets/figures/supercategory_distribution.png"
-       alt="Distribution of the TACO supercategories"
-       width="350">
+  <img 
+	  src="assets/figures/supercategory_distribution.png"
+      alt="Distribution of the TACO supercategories"
+      width="550"
+  \>
 </p>
 
 <p align="center">
-  <img src="assets/figures/image_size_distributions.png"
-       alt="Distribution of image widths and heights in TACO"
-       width="350">
+  <img 
+	  src="assets/figures/image_size_distributions.png"
+      alt="Distribution of image widths and heights in TACO"
+      width="550"
+  \>
 </p>
 
 ---
@@ -146,9 +156,11 @@ The same image split and box geometry are reused across these three representati
 ## Model architecture and transfer learning
 
 <p align="center">
-
-  <img src="assets/figures/yolo_architecture.png" alt="Conceptual YOLO backbone, neck and detection head" width="400">
-
+  <img 
+	  src="assets/figures/yolo_architecture.png"
+	  alt="Conceptual YOLO backbone, neck and detection head"
+	  width="400"
+  \>
 </p>
 
 A modern YOLO detector can be understood through three functional components:
@@ -247,7 +259,13 @@ Recall measures how many annotated objects were found. In environmental monitori
 For the binary dataset, class averaging is trivial because there is only one class, but averaging across IoU thresholds remains essential for mAP50-95.
 
 
-<p align="center"> <img src="assets/figures/training_curves.png" alt="Classification-loss and mAP50 evolution for the initial binary YOLO experiments" width="400"> </p>
+<p align="center"> 
+	<img 
+		src="assets/figures/training_curves.png"
+		alt="Classification-loss and mAP50 evolution for the initial binary YOLO experiments"
+		width="600"
+	\>
+</p>
 
 The curves show that both binary models progressively reduced their classification loss while validation mAP50 generally improved throughout training. YOLOv8m continued improving for longer and ultimately achieved the stronger result, although the validation metric exhibits the expected epoch-to-epoch variability of a small dataset.
 
@@ -313,9 +331,11 @@ The medium model improved all four metrics, but the gain was modest relative to 
 | YOLOv8s |       1280 |      Yes      |     0.595 |     0.442 |     0.476 |     0.329 |       **38.36** |
 
 <p align="center">
-
-  <img src="assets/figures/full_results.png" alt="Full model comparison from the final presentation" width="400">
-
+  <img 
+	  src="assets/figures/full_results.png"
+	  alt="Full model comparison from the final presentation"
+	  width="600"
+  \>
 </p>
 
 ### Main observations
