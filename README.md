@@ -381,7 +381,7 @@ The 960px YOLO26m configuration is the best accuracy-oriented model, while lower
 | End-to-end time    | 46.54 ms/image |
 | Derived throughput |      21.49 FPS |
 
-Weights: [`assets/weights/YOLO26m_freeze_960_best.pt`](YOLO26m_freeze_960_best.pt)
+Weights: [`YOLO26m_freeze_960_best.pt`](assets/weights/YOLO26m_freeze_960_best.pt)
 
 ### Fastest recorded medium-model configuration
 
