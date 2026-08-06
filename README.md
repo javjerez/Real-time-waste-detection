@@ -381,6 +381,8 @@ The 960px YOLO26m configuration is the best accuracy-oriented model, while lower
 | End-to-end time    | 46.54 ms/image |
 | Derived throughput |      21.49 FPS |
 
+Weights: [`assets/weights/yolo26m_960_frozen_best.pt`](yolo26m_960_frozen_best.pt)
+
 ### Fastest recorded medium-model configuration
 
 **YOLOv8m, 640 px, frozen early layers**
@@ -473,6 +475,8 @@ pip install ultralytics pycocotools pandas numpy matplotlib pillow scikit-learn 
 ### Reproducing the full final sweep
 
 The complete 100-epoch sweep cannot currently be reproduced from the public snapshot alone because the final run configurations, result CSV files and weights are not all present. The report and presentation preserve the experiment matrix and outputs, but exact reproducibility requires restoring or regenerating those artifacts.
+
+All 17 runs (configs, metrics and result CSVs) are published on Kaggle: [TACO results dataset](https://www.kaggle.com/datasets/marcozenna/taco-results). This is the raw output behind the tables above, useful for digging into a specific configuration or re-plotting the sweep.
 
 
 
